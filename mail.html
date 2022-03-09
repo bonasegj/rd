@@ -8,12 +8,30 @@
 
   <body>
     
-    <h4>Prueba mailto from StackOverflow</h4>  
+    <h4>Prueba SMTP.js v5</h4>  
     
-    <FORM METHOD="post" ACTION="mailto:ncsupport@nextcentra.com" ENCTYPE="multipart/form-data">
-        Attachment: <INPUT TYPE="file" NAME="attachment" MAXLENGTH=50 ALLOW="text/*" >
-         <input type="submit" name="submit" id="submit" value="Email"/>
-        </FORM>  
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<input type="button" value="Send Email" onclick="sendEmail()">
+<script>
+function sendEmail() {
+	Email.send({
+    Host: "aspmx.l.google.com",
+    Username: "santiago3152223@gmail.com",
+    Password : "sjtmsicxozhmwbmy",
+    To : 'jbonasegna@gmail.com',
+    From : "santiago3152223@gmail.com",
+    Subject : "Test Email",
+    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>",
+    Attachments : [
+	{
+		name : "smtp.png",
+		path : "https://…/smtp.png"
+	}]
+	}).then(
+  		message => alert(message)
+	);
+}
+</script> 
 
   </body>
 
